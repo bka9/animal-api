@@ -13,7 +13,7 @@ trait AnimalService extends HttpService{
   val indexRoute = path("animals"){
     import spray.httpx.SprayJsonSupport.sprayJsonMarshaller
     import spray.httpx.SprayJsonSupport.sprayJsonUnmarshaller
-    import com.octanner.demo.animals.model.hyper.HyperJsonProtocol._
+    import io.devmix.demo.animals.model.hyper.HyperJsonProtocol._
     get{
       respondWithHeader(`Content-Type`(ContentType(MediaType.custom("application/hyper+json")))) {
         complete{
