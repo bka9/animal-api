@@ -1,8 +1,9 @@
 FROM williamyeh/scala
 
+EXPOSE 3000
+
 ADD . /app
 WORKDIR /app
 
-EXPOSE 3000
 
 RUN sbt compile
