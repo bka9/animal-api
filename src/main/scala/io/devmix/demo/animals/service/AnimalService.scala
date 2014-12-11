@@ -10,7 +10,7 @@ import spray.routing.HttpService
  * Created by kevin.anderson on 11/20/14.
  */
 trait AnimalService extends HttpService{
-  val indexRoute = path("animals"){
+  val indexRoute = path(""){
     import spray.httpx.SprayJsonSupport.sprayJsonMarshaller
     import spray.httpx.SprayJsonSupport.sprayJsonUnmarshaller
     import io.devmix.demo.animals.model.hyper.HyperJsonProtocol._
