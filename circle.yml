@@ -9,4 +9,4 @@ dependencies:
 
 test:
   override:
-    - export CID=$(docker run -d -p 3000:3000 bka9/animalapi:$CIRCLE_SHA1 sbt run); sleep 10; echo $(docker inspect --format '{{ .NetworkSettings.IPAddress }}' $CID);
+    - export CID=$(docker run -d -p 3000:3000 bka9/animalapi:$CIRCLE_SHA1 sbt run); sleep 10; curl http://$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' $CID):3000;
