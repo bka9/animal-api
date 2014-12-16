@@ -1,6 +1,6 @@
 FROM williamyeh/scala
 
-EXPOSE 3000
+EXPOSE 8080
 
 ADD . /app
 WORKDIR /app
