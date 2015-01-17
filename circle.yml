@@ -9,5 +9,4 @@ dependencies:
 
 test:
   override:
-    - docker run  -d -p 3000:3000 bka9/animalapi:$CIRCLE_SHA1 sbt run; sleep 10;
-    - curl --retry 10 --retry-delay 5 -v http://localhost:3000
+    - docker run  -d -p 3000:3000 bka9/animalapi:$CIRCLE_SHA1 sbt run; sleep 15;curl --retry 10 --retry-delay 5 -v http://localhost:3000;
