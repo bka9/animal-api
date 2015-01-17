@@ -9,5 +9,5 @@ dependencies:
 
 test:
   override:
-    - docker run --expose=8080 -e "host=127.0.0.1" -e "port=8080" -d -P bka9/animalapi:$CIRCLE_SHA1 sbt run; sleep 10;
+    - docker run  -d -p8080:8080 bka9/animalapi:$CIRCLE_SHA1 sbt run; sleep 10;
     - curl --retry 10 --retry-delay 5 -v http://localhost:8080
