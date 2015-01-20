@@ -1,6 +1,8 @@
 machine:
   services:
     - docker
+  ruby:
+      version: 2.1.2
 
 dependencies:
   pre:
@@ -8,7 +10,11 @@ dependencies:
     - docker build -t bka9/animalapi:$CIRCLE_SHA1 .
 
 test:
+  pre:
+    - cd pacto; bundle install;
   override:
     - docker run -d -p 3000:3000 bka9/animalapi:$CIRCLE_SHA1 sbt run; sleep 15;
     - docker ps
     - curl --retry 10 --retry-delay 5 -v http://localhost:3000
+    - cd pacto;bundle exec rake pacto:meta_validate['contracts'];
+    - cd pacto;bundle exec rake pacto:validate['http://localhost:3000','contracts'];

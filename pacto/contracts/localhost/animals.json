@@ -1,0 +1,80 @@
+{
+  "request": {
+    "headers": {
+    },
+    "http_method": "get",
+    "path": "/animals"
+  },
+  "response": {
+    "headers": {
+      "Content-Type": "application/json; charset=UTF-8"
+    },
+    "status": 200,
+    "schema": {
+      "$schema": "http://json-schema.org/draft-03/schema#",
+      "description": "Generated from http://localhost:3000/animals with shasum 856abbdb266e66e3a3a105473dd40e527d37f4c5",
+      "type": "object",
+      "required": true,
+      "properties": {
+        "lion": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "href": {
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "tiger": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "href": {
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "bear": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "href": {
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "href": {
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  },
+  "examples": {
+    "default": {
+      "request": {
+        "method": "get",
+        "uri": "http://localhost:3000/animals",
+        "headers": {
+          "User-Agent": "Faraday v0.9.1",
+          "Accept-Encoding": "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
+          "Accept": "*/*"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Server": "spray-can/1.3.2",
+          "Date": "Mon, 19 Jan 2015 05:22:51 GMT",
+          "Content-Type": "application/json; charset=UTF-8",
+          "Content-Length": "245"
+        },
+        "body": "{\n  \"lion\": {\n    \"href\": \"http://localhost:3000/animals/lion\"\n  },\n  \"tiger\": {\n    \"href\": \"http://localhost:3000/animals/tiger\"\n  },\n  \"bear\": {\n    \"href\": \"http://localhost:3000/animals/bear\"\n  },\n  \"href\": \"http://localhost:3000/animals\"\n}"
+      }
+    }
+  },
+  "name": "/animals"
+}

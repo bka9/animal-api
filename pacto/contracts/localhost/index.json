@@ -1,0 +1,60 @@
+{
+  "request": {
+    "headers": {
+    },
+    "http_method": "get",
+    "path": "/"
+  },
+  "response": {
+    "headers": {
+      "Content-Type": "application/json; charset=UTF-8"
+    },
+    "status": 200,
+    "schema": {
+      "$schema": "http://json-schema.org/draft-03/schema#",
+      "description": "Generated from http://localhost:3000/ with shasum c4de305128e68c739ef0390519714e861830aa7b",
+      "type": "object",
+      "required": true,
+      "properties": {
+        "animals": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "href": {
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "href": {
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  },
+  "examples": {
+    "default": {
+      "request": {
+        "method": "get",
+        "uri": "http://localhost:3000/",
+        "headers": {
+          "User-Agent": "Faraday v0.9.1",
+          "Accept-Encoding": "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
+          "Accept": "*/*"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Server": "spray-can/1.3.2",
+          "Date": "Mon, 19 Jan 2015 05:22:51 GMT",
+          "Content-Type": "application/json; charset=UTF-8",
+          "Content-Length": "102"
+        },
+        "body": "{\n  \"animals\": {\n    \"href\": \"http://localhost:3000/animals\"\n  },\n  \"href\": \"http://localhost:3000/\"\n}"
+      }
+    }
+  },
+  "name": "/"
+}
