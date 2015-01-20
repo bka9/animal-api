@@ -12,7 +12,6 @@ import spray.routing.HttpService
 trait AnimalService extends HttpService with Http{
   val indexRoute = path(""){
     import spray.httpx.SprayJsonSupport.sprayJsonMarshaller
-    import spray.httpx.SprayJsonSupport.sprayJsonUnmarshaller
     import io.devmix.demo.animals.model.hyper.HyperJsonProtocol._
     get{
       requestInstance { req =>
@@ -28,14 +27,13 @@ trait AnimalService extends HttpService with Http{
 
   val animalsRoute = path("animals"){
     import spray.httpx.SprayJsonSupport.sprayJsonMarshaller
-    import spray.httpx.SprayJsonSupport.sprayJsonUnmarshaller
     import io.devmix.demo.animals.model.hyper.HyperJsonProtocol._
     get{
       requestInstance { req =>
         implicit val request = req
         respondWithHeader(`Content-Type`(ContentType(MediaType.custom("application/hyper+json")))) {
           complete {
-            HyperJson(url("/animals"), ("tiger",HyperObj(url("/animals/tiger"))),("bear",HyperObj(url("/animals/bear"))))
+            HyperJson(url("/animals"), ("lion", HyperObj(url("/animals/lion"))),("tiger",HyperObj(url("/animals/tiger"))),("bear",HyperObj(url("/animals/bear"))))
           }
         }
       }
