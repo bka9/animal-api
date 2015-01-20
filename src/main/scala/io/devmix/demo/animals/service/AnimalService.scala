@@ -35,7 +35,7 @@ trait AnimalService extends HttpService with Http{
         implicit val request = req
         respondWithHeader(`Content-Type`(ContentType(MediaType.custom("application/hyper+json")))) {
           complete {
-            HyperJson(url("/animals"), ("lion", HyperObj(url("/animals/lion"))),("tiger",HyperObj(url("/animals/tiger"))),("bear",HyperObj(url("/animals/bear"))))
+            HyperJson(url("/animals"), ("tiger",HyperObj(url("/animals/tiger"))),("bear",HyperObj(url("/animals/bear"))))
           }
         }
       }
